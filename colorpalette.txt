@@ -1,0 +1,5 @@
+#264653 - dark blue
+#2a9d8f - light blue
+#e9c46a - yellow
+#f4a261 - orange
+#e76f51 - red
