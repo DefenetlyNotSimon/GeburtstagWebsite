@@ -7,11 +7,21 @@ body {
 
 .countdown {
     text-align: center;
-    margin-top: 80%;
+    margin-top: 300px;
 }
 
 .countdown h1 {
     color: #f4a261;
     font-weight: bold;
     font-size: 7em;
+}
+
+@media only screen and (max-width: 480px) {
+    .countdown {
+        text-align: center;
+        margin-top: 340px;
+    }
+    .countdown h1 {
+        font-size: 3em;
+    }
 }
