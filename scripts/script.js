@@ -1,23 +1,23 @@
 //Datum zu dem gezählt wird
 var countDownDate = new Date("Nov 24, 2022 00:00:00").getTime();
-console.log(countDownDate)
+console.log("cdDate " + countDownDate)
 
 //Jede Sekunde updaten
 var x = setInterval(function() {
 
     //Datum und Zeit von heute
     var now = new Date().getTime();
-    console.log(now);
+    console.log("now " + now);
 
     //Entfernung der Daten
     var distance = countDownDate - now;
-    console.log(distance);
+    console.log("distance: " + distance);
 
     //Berechnung für Tage, Stunden, Minuten, Sekunden
     var { days, hours, minutes, seconds } = calculateUnits();
 
     //Anzeigen des Ergebnis
-    document.getElementById("countdownh1").innerHTML = days + ":" + hours + ":" + minutes + ":" + seconds;
+    document.getElementById("countdownh1").innerHTML = (days + ":" + hours + ":" + minutes + ":" + seconds);
 
     //Text bei ablaufen
     if (distance < 0) {
