@@ -1,3 +1,11 @@
+//JSON Datei laden
+loadJSON('data/quotes.json', function(text) {
+    var data = JSON.parse(text);
+    console.log(data);
+})
+
+
+
 //Datum zu dem gezählt wird
 var countDownDate = new Date("Nov 24, 2022 00:00:00").getTime();
 console.log("cdDate " + countDownDate)
