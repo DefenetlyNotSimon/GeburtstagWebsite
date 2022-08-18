@@ -14,11 +14,13 @@ console.log(quotes)
     //Credit to User Zockedidock for helping with JSON implementation
 
 //Countdown
-//Datum zu dem gezählt wird
+var intervall = 1000
+    //Datum zu dem gezählt wird
 var countDownDate = new Date("Nov 24, 2022 00:00:00").getTime()
 console.log("cdDate " + countDownDate)
 
 //Jede Sekunde updaten
+
 var x = setInterval(function() {
     //Datum und Zeit von heute
     var now = new Date().getTime()
@@ -50,17 +52,21 @@ var x = setInterval(function() {
     if (distance < 0) {
         clearInterval(x)
         document.getElementById("countdownh1").innerHTML = "ABGELAUFEN"
+        countdownEnd();
     }
+    console.log("Screen Width:" + screen.width)
 
-    function leadingZero(value) {
-        if (value < 10) {
-            var value2 = "0" + String(value)
-            return value2
-        } else {
-            return value
-        }
+
+}, intervall)
+
+function leadingZero(value) {
+    if (value < 10) {
+        var value2 = "0" + String(value)
+        return value2
+    } else {
+        return value
     }
-}, 1000)
+}
 
 //Quote implementation
 var length = quotes.length
@@ -76,4 +82,34 @@ function randomQuote() {
     console.log('random Array: ' + randomNum)
 
     document.getElementById("Zitat").innerHTML = ('"' + quotes[randomNum] + '"')
+}
+
+//Upon Countdown completion
+//debug
+var debugButton = document.getElementById("debugButton")
+debugButton.onclick = function() { countdownEnd() }
+
+var countdown = document.getElementById("countdownh1")
+var countdowndiv = document.getElementById("countdowndiv")
+var alertSend = 0
+
+function countdownEnd() {
+    //debug
+    countDownDate = new Date("Nov 24, 2021 00:00:00").getTime()
+
+
+    if (screen.width > 481 && alertSend == 0) {
+        alert(("Bitte benutze ab jetzt dein Handy :D"))
+        document.getElementById("body").style.display = "none"
+        alertSend = 1
+    }
+
+    document.getElementById("Zitat").style.display = "none"
+
+    countdown.innerHTML = 'Happy Birthday!'
+
+
+    countdowndiv.classList.remove("before")
+    countdowndiv.classList.add("after")
+
 }

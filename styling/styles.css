@@ -7,7 +7,7 @@ body {
 
 .countdown {
     text-align: center;
-    margin-top: 300px;
+    transition: all 0.5s ease;
 }
 
 .countdown h1 {
@@ -15,6 +15,15 @@ body {
     font-weight: bold;
     font-size: 7em;
     text-shadow: 3px 3px black;
+    transition: all 0.5s ease;
+}
+
+.before {
+    margin-top: 300px;
+}
+
+.after {
+    margin-top: 50px;
 }
 
 .countdown a {
@@ -31,7 +40,7 @@ body {
 @media only screen and (max-width: 480px) {
     .countdown {
         text-align: center;
-        margin-top: 340px;
+        margin-top: 300px;
     }
     .countdown h1 {
         font-size: 3em;
@@ -39,5 +48,11 @@ body {
     .countdown a {
         top: -20px;
         font-size: 1em;
+    }
+    .before {
+        margin-top: 300px;
+    }
+    .after {
+        margin-top: 50px;
     }
 }
