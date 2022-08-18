@@ -97,7 +97,7 @@ function countdownEnd() {
     //debug
     countDownDate = new Date("Nov 24, 2021 00:00:00").getTime()
 
-
+    //Website from now on only works on phone --> makes it easier for me :D
     if (screen.width > 481 && alertSend == 0) {
         alert(("Bitte benutze ab jetzt dein Handy :D"))
         document.getElementById("body").style.display = "none"
