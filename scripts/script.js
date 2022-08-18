@@ -16,7 +16,7 @@ console.log(quotes)
 //Countdown
 var intervall = 1000
     //Datum zu dem gezählt wird
-var countDownDate = new Date("Nov 24, 2021 00:00:00").getTime()
+var countDownDate = new Date("Nov 24, 2022 00:00:00").getTime()
 console.log("cdDate " + countDownDate)
 
 //Jede Sekunde updaten
