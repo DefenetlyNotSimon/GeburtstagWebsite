@@ -14,6 +14,18 @@ body {
     color: #f4a261;
     font-weight: bold;
     font-size: 7em;
+    text-shadow: 3px 3px black;
+}
+
+.countdown a {
+    display: block;
+    position: relative;
+    top: -50px;
+    font-size: 2em;
+    color: #2a9d8f;
+    text-shadow: 1px 1px black;
+    margin-right: 20%;
+    margin-left: 20%;
 }
 
 @media only screen and (max-width: 480px) {
@@ -23,5 +35,9 @@ body {
     }
     .countdown h1 {
         font-size: 3em;
+    }
+    .countdown a {
+        top: -20px;
+        font-size: 1em;
     }
 }
