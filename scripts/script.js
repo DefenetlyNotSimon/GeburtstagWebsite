@@ -1,3 +1,4 @@
+//Getting the JSON File --> Implementation below Countdown
 const getJSON = async(url) => {
     const response = await fetch(url)
     const data = await response.json()
@@ -9,8 +10,10 @@ const data = await getJSON("../data/quotes.json")
 console.log(data);
 const quotes = data.Quotes
 
-console.log(quotes[2])
+console.log(quotes)
+    //Credit to User Zockedidock for helping with JSON implementation
 
+//Countdown
 //Datum zu dem gezählt wird
 var countDownDate = new Date("Nov 24, 2022 00:00:00").getTime()
 console.log("cdDate " + countDownDate)
@@ -58,3 +61,19 @@ var x = setInterval(function() {
         }
     }
 }, 1000)
+
+//Quote implementation
+var length = quotes.length
+console.log('Array length' + length)
+randomQuote()
+
+var x = setInterval(function() {
+    randomQuote()
+}, 20000)
+
+function randomQuote() {
+    var randomNum = Math.floor(Math.random() * (length - 1)) + 1
+    console.log('random Array: ' + randomNum)
+
+    document.getElementById("Zitat").innerHTML = ('"' + quotes[randomNum] + '"')
+}
