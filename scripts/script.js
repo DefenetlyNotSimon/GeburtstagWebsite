@@ -1,14 +1,6 @@
-//JSON Datei laden
-loadJSON('data/quotes.json', function(text) {
-    var data = JSON.parse(text);
-    console.log(data);
-})
-
-
-
 //Datum zu dem gezählt wird
 var countDownDate = new Date("Nov 24, 2022 00:00:00").getTime();
-console.log("cdDate " + countDownDate)
+console.log("cdDate " + countDownDate);
 
 //Jede Sekunde updaten
 var x = setInterval(function() {
@@ -22,7 +14,18 @@ var x = setInterval(function() {
     console.log("distance: " + distance);
 
     //Berechnung für Tage, Stunden, Minuten, Sekunden
-    var { days, hours, minutes, seconds } = calculateUnits();
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    //adding leaing zeroes
+    days = leadingZero(days);
+    hours = leadingZero(hours);
+    minutes = leadingZero(minutes);
+    seconds = leadingZero(seconds);
+
+
 
     //Anzeigen des Ergebnis
     document.getElementById("countdownh1").innerHTML = (days + ":" + hours + ":" + minutes + ":" + seconds);
@@ -33,12 +36,17 @@ var x = setInterval(function() {
         document.getElementById("countdownh1").innerHTML = "ABGELAUFEN";
     }
 
+    function leadingZero(value) {
+        if (value < 10) {
+            var value2 = '0' + String(value);
+            return value2;
+        } else {
+            return value;
+        }
 
-    function calculateUnits() {
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        return { days, hours, minutes, seconds };
     }
+
+
+
+
 }, 1000)
