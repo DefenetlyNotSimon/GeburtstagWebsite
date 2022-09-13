@@ -1,3 +1,7 @@
+var debugMode = false;
+var quotesShow = false;
+
+
 //Getting the JSON File --> Implementation below Countdown
 const getJSON = async(url) => {
     const response = await fetch(url)
@@ -86,7 +90,7 @@ function randomQuote() {
 
 //Upon Countdown completion
 //debug
-var debugButton = document.getElementById("debugButton")
+var debugButton = document.getElementById("debugButton1")
 debugButton.onclick = function() { countdownEnd() }
 
 var countdown = document.getElementById("countdownh1")
@@ -187,4 +191,26 @@ function enhance(element, array, picnum) {
             }
         }
     }
+}
+
+//Debug und Quotes an/aus
+var quotesElement = document.getElementById("Zitat")
+
+if (quotesShow) {
+    quotesElement.style.display = ""
+    console.log("ttrueQuote");
+} else {
+    console.log("falseQuote")
+    quotesElement.style.display = "none"
+}
+
+
+var debugButton1 = document.getElementById("debugButton1")
+
+if (debugMode) {
+    debugButton1.style.display = ""
+    console.log("ttrueQuote");
+} else {
+    console.log("falseQuote")
+    debugButton1.style.display = "none"
 }
