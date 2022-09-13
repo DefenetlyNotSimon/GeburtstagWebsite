@@ -1,5 +1,5 @@
-var debugMode = true;
-var quotesShow = true;
+var debugMode = false;
+var quotesShow = false;
 
 
 //Getting the JSON File --> Implementation below Countdown
@@ -202,6 +202,7 @@ if (quotesShow) {
 } else {
     console.log("falseQuote")
     quotesElement.style.display = "none"
+    console.log("noQuotes")
 }
 
 
@@ -209,6 +210,15 @@ var debugButton1 = document.getElementById("debugButton1")
 
 if (debugMode) {
     debugButton1.style.display = "inline"
+
 } else {
     debugButton1.style.display = "none"
+    console.log("nodebug")
 }
+
+
+console.log("Initial Loading Done")
+console.log("---------------------")
+console.log("---------------------")
+console.log("---------------------")
+console.log("---------------------")
