@@ -154,3 +154,11 @@ body {
         margin-top: 50px;
     }
 }
+
+#Zitat {
+    display: none;
+}
+
+#debugButton1 {
+    display: none;
+}

@@ -1,5 +1,5 @@
-var debugMode = false;
-var quotesShow = false;
+var debugMode = true;
+var quotesShow = true;
 
 
 //Getting the JSON File --> Implementation below Countdown
@@ -197,7 +197,7 @@ function enhance(element, array, picnum) {
 var quotesElement = document.getElementById("Zitat")
 
 if (quotesShow) {
-    quotesElement.style.display = ""
+    quotesElement.style.display = "block"
     console.log("ttrueQuote");
 } else {
     console.log("falseQuote")
@@ -208,9 +208,7 @@ if (quotesShow) {
 var debugButton1 = document.getElementById("debugButton1")
 
 if (debugMode) {
-    debugButton1.style.display = ""
-    console.log("ttrueQuote");
+    debugButton1.style.display = "inline"
 } else {
-    console.log("falseQuote")
     debugButton1.style.display = "none"
 }
