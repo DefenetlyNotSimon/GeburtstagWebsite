@@ -1,5 +1,5 @@
 var debugMode = false;
-var quotesShow = false;
+var quotesShow = true;
 
 
 //Getting the JSON File --> Implementation below Countdown
