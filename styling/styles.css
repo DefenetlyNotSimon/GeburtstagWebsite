@@ -1,13 +1,23 @@
-body {
+html,
+body,
+div,
+img {
     padding: 0;
     margin: 0;
+    border: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #264653;
+    vertical-align: baseline;
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
 }
 
 .countdown {
     text-align: center;
-    margin-top: 300px;
+    transition: all 0.5s ease;
 }
 
 .countdown h1 {
@@ -15,6 +25,15 @@ body {
     font-weight: bold;
     font-size: 7em;
     text-shadow: 3px 3px black;
+    transition: all 0.5s ease;
+}
+
+.before {
+    margin-top: 300px;
+}
+
+.after {
+    margin-top: 50px;
 }
 
 .countdown a {
@@ -28,10 +47,98 @@ body {
     margin-left: 20%;
 }
 
+.hidden {
+    display: none;
+}
+
+.bold {
+    font-weight: bold;
+    color: #f4a261
+}
+
+
+/*Button*/
+
+.contbutton {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    margin-top: 50px;
+    display: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 44px;
+    border: 0;
+    color: #264653;
+    background: #2a9d8f;
+    line-height: 1.15;
+    font-size: 16px;
+}
+
+.contbutton:hover {
+    transition: all 1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px;
+    left: -100px;
+}
+
+.contbuttonclicked {
+    display: none;
+}
+
+
+/*After CD --> Only on Phone*/
+
+.introduction {
+    text-align: left;
+    font-size: 1em;
+    color: #2a9d8f;
+    text-shadow: 1px 1px black;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding-top: 10%;
+}
+
+.pics h2 {
+    margin-top: 100px;
+    text-align: center;
+    color: #f4a261;
+    font-weight: bold;
+    font-size: 2em;
+    text-shadow: 3px 3px black;
+    transition: all 0.5s ease;
+}
+
+.img {
+    max-width: 20%;
+    margin: 5px;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+    box-shadow: 2px 2px black;
+}
+
+.enhanced {
+    -webkit-transform: scale(4);
+    /* or some other value */
+    transform: scale(4);
+    display: block;
+    position: absolute;
+    top: 130%;
+}
+
+.piccontainer {
+    margin-top: -10px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 480px) {
     .countdown {
         text-align: center;
-        margin-top: 340px;
+        margin-top: 300px;
     }
     .countdown h1 {
         font-size: 3em;
@@ -40,4 +147,18 @@ body {
         top: -20px;
         font-size: 1em;
     }
+    .before {
+        margin-top: 300px;
+    }
+    .after {
+        margin-top: 50px;
+    }
+}
+
+#Zitat {
+    display: none;
+}
+
+#debugButton1 {
+    display: none;
 }
