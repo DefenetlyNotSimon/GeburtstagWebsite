@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var debugMode = true;
+=======
+var debugMode = false;
+>>>>>>> f424d67177b39d443d5b219a9012aab178a41d6c
 var quotesShow = true;
 
 
