@@ -1,5 +1,5 @@
-var debugMode = false;
-var quotesShow = false;
+var debugMode = true;
+var quotesShow = true;
 
 
 //Getting the JSON File --> Implementation below Countdown
@@ -96,6 +96,8 @@ debugButton.onclick = function() { countdownEnd() }
 var countdown = document.getElementById("countdownh1")
 var countdowndiv = document.getElementById("countdowndiv")
 var alertSend = 0
+var songAudio = document.getElementById("songAudio")
+var pauseButton = document.getElementById("pauseplay")
 
 function countdownEnd() {
     //debug
@@ -108,6 +110,9 @@ function countdownEnd() {
         HideElement(document.getElementById("body"))
         alertSend = 1
     }
+
+    musicPlay();
+    pauseButton.classList.remove("hidden")
 
     document.getElementById("Zitat").style.display = "none"
     countdown.innerHTML = 'Happy Birthday!'
@@ -153,16 +158,9 @@ function showMemories() {
     arraypics[9].onclick = function() { enhance(arraypics[9], arraypics, picnum) }
     arraypics[10].onclick = function() { enhance(arraypics[10], arraypics, picnum) }
     arraypics[11].onclick = function() { enhance(arraypics[11], arraypics, picnum) }
-    arraypics[12].onclick = function() { enhance(arraypics[12], arraypics, picnum) }
-    arraypics[13].onclick = function() { enhance(arraypics[13], arraypics, picnum) }
-    arraypics[14].onclick = function() { enhance(arraypics[14], arraypics, picnum) }
-    arraypics[15].onclick = function() { enhance(arraypics[15], arraypics, picnum) }
-    arraypics[16].onclick = function() { enhance(arraypics[16], arraypics, picnum) }
-    arraypics[17].onclick = function() { enhance(arraypics[17], arraypics, picnum) }
-    arraypics[18].onclick = function() { enhance(arraypics[18], arraypics, picnum) }
 
 
-
+    document.getElementById("continue2").classList.remove('hidden')
 }
 
 function ShowElement(element) {
@@ -215,6 +213,66 @@ if (debugMode) {
     debugButton1.style.display = "none"
     console.log("nodebug")
 }
+
+
+var firstPlay = true;
+let trackList = [{
+        name: "Tanz aus der Reihe",
+        path: "songs/Tanz.mp3"
+    },
+    {
+        name: "Unikat",
+        path: "songs/Unikat.mp3"
+    }
+]
+var trackID = 0;
+
+
+function musicPlay() {
+    console.log("Gerade läuft: " + trackList[trackID].name)
+    console.log("Aktueller Path: " + trackList[trackID].path)
+    if (firstPlay) {
+        console.log("I was here")
+        songAudio.play()
+        firstPlay = false;
+    }
+    console.log("Track ID: " + trackID)
+    console.log("Song Anzahl: " + trackList.length)
+
+}
+
+function pausePlay(button) {
+    if (songAudio.paused) {
+        songAudio.play()
+        button.src = "pictures/Pause.png"
+    } else {
+        songAudio.pause()
+        button.src = "pictures/Play.png"
+    }
+}
+
+songAudio.addEventListener('ended', function() {
+    songAudio.pause();
+    if (trackID == trackList.length - 1)
+        trackID = 0;
+    else trackID = +1;
+    console.log("Track ID: " + trackID)
+    console.log("ITS OVER")
+    console.log("New Path: " + trackList[trackID].path)
+    songAudio.src = trackList[trackID].path
+    songAudio.load()
+    songAudio.play()
+
+
+})
+
+//Pause Play
+
+pauseButton.onclick = function() {
+    pausePlay(pauseButton);
+}
+
+
 
 
 console.log("Initial Loading Done")

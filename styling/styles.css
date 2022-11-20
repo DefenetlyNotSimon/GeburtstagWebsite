@@ -162,3 +162,13 @@ body {
 #debugButton1 {
     display: none;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+#pauseplay {
+    max-width: 50px;
+    padding: 10px;
+}
