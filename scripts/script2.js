@@ -1,5 +1,4 @@
 var debugMode = true;
-var debugMode = false;
 var quotesShow = true;
 
 
